@@ -1,5 +1,5 @@
 import React from 'react';
-import BubblesPokemon from './bubblesPokemon';
+import BubblesPokemon from './BubblesPokemon';
 import "../styles/Header.css"
 
 const Header = ({ pokemons, isLoading }) => {
