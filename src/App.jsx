@@ -7,7 +7,7 @@ import {
   deletePokemon,
 } from "./functions/Apis";
 import AppRouter from "./AppRouter";
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 const App = () => {
   const navigate = useNavigate();
   const [pokemons, setPokemons] = useState([]);

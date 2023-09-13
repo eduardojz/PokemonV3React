@@ -1,14 +1,14 @@
 import React from "react";
 import "../styles/Evolutions.css";
 import { selectType } from "../assets/imports/imports";
-function Evolutions({ dataEvolutions,redirect }) {
+function Evolutions({ dataEvolutions,redirectInfo }) {
   return (
     <div className="evolution-bg">
       <h1>Evolutions</h1>
       <div className="evolutions-container">
         {dataEvolutions.map((item, index) => (
           <article className="card" key={index}>
-            <div className="card-img" onClick={() => redirect(item.id)}>
+            <div className="card-img" onClick={() => redirectInfo(item.id)}>
               <img  src={item.img} alt={item.name} />
             </div>
             <div className="pokemon-info">

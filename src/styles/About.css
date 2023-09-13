@@ -22,8 +22,7 @@ body{
     
     position: relative;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    flex-direction: column;    
 }
 .card-about >img{
     position: absolute;

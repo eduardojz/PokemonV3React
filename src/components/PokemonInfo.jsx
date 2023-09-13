@@ -4,7 +4,7 @@ import "../styles/PokemonInfo.css";
 import fetchEvolutionChain, { getPokemon } from "../functions/Apis";
 import Evolutions from "./Evolutions";
 import { selectType } from "../assets/imports/imports";
-function PokemonInfo({ redirect }) {
+function PokemonInfo({ redirectInfo }) {
   const { id } = useParams();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -66,7 +66,7 @@ function PokemonInfo({ redirect }) {
                   ))}
                 </div>
             </div>
-            <Evolutions dataEvolutions={dataEvolutions} redirect={redirect} />
+            <Evolutions dataEvolutions={dataEvolutions} redirectInfo={redirectInfo} />
           </div>
         </>
       )}
