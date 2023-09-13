@@ -10,6 +10,7 @@ export async function getPokemon(id) {
         ability: data.abilities[0].ability.name,
         types: data.types.map((item) => item.type.name),
         stats: data.stats.map((stat) => ({ [stat.stat.name]: stat.base_stat })),
+        gif:data.sprites.versions["generation-v"]["black-white"].animated.front_default
       };
     } else {
       throw "Ha ocurrido un error al obtener el Pokémon.";

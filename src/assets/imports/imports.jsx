@@ -16,27 +16,7 @@ import psychic from "../icons/psychic.svg";
 import rock from "../icons/rock.svg";
 import steel from "../icons/steel.svg";
 import water from "../icons/ground.svg";
-
-// export const types = {
-//   bug: [bug, "background-color:#fd7d24"],
-//   dark: [dark, "background-color: #707070;"],
-//   dragon: [dragon, "background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);"],
-//   electric: [electric, "background-color: #eed535;"],
-//   fairy: [fairy, "background-color: #fdb9e9;"],
-//   fighting: [fighting, "background-color: #d56723;"],
-//   fire: [fire, "background-color: #fd7d24;"],
-//   flying: [flying, "background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);"],
-//   ghost: [ghost, "background-color: #7b62a3;"],
-//   grass: [grass, "background-color: #9bcc50;"],
-//   ground: [ground, "background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);"],
-//   ice: [ice, "background-color: #51c4e7;"],
-//   normal: [normal, "background-color: #a4acaf;"],
-//   poison: [poison, "background-color: #b97fc9;"],
-//   psychic: [psychic, "background-color: #f366b9;"],
-//   rock: [rock, "background-color: #a38c21;"],
-//   steel: [steel, "background-color: #9eb7b8;"],
-//   water: [water, "background-color: #4592c4;"],
-// };
+import trash from "../icons/trash.svg"
 export const types = {
   bug: [bug, 'bug'],
   dark: [dark, 'dark'],
@@ -56,6 +36,7 @@ export const types = {
   rock: [rock, 'rock'],
   steel: [steel, 'steel'],
   water: [water, 'water'],
+  trash:trash
 };
 
   export const selectType = (type) => {

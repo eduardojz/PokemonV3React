@@ -15,7 +15,7 @@ function PokemonInfo({ redirectInfo }) {
       try {
         const pokemonData = await getPokemon(id);
         const pokemonEvolutions = await fetchEvolutionChain(id); 
-        console.log(pokemonEvolutions);
+        console.log(pokemonData);
         const promises = pokemonEvolutions.evolutions.map((i) => getPokemon(i));
         const evolutionsData = await Promise.all(promises);
         setDataEvolutions(evolutionsData);
@@ -42,7 +42,7 @@ function PokemonInfo({ redirectInfo }) {
           <div className="info">
             <div className="column">
               <div className="info-img">
-                <img src={data.img} alt={data.name} />
+                <img src={data.gif} alt={data.name} />
               </div>
               
             </div>

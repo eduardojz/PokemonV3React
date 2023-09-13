@@ -46,10 +46,6 @@ const App = () => {
   }
   function redirectInfo(id) {
     navigate(`/pokedex/${id}`);
-    // const navigate=useNavigate()
-    // navigate(`/pokedex/${id}`)
-    //window.open(`/pokedex/${id}`);
-    //return <Navigate to={`/pokedex/${id}`} />;
   }
   async function likePokemon(pokemon) {
     const verify = await AddPokemon(pokemon.id);
@@ -75,7 +71,6 @@ const App = () => {
   function searchText(e) {
     let regex = new RegExp(e.target.value, "i"); //  'i'  insensible a mayusculas/minusculas
     if (e.target.value !== "") {
-      console.log(pokemons);
       const filterData = pokemonsCopy.filter(({ name }) => regex.test(name));
       setPokemons(filterData);
     } else {
