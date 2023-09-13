@@ -5,7 +5,7 @@ import About from "./components/About";
 import Navigation from "./components/Navigation";
 import PokedexV2 from "./components/PokedexV2";
 import PokemonInfo from "./components/PokemonInfo";
-function AppRouter({ pokemons, updatePage, pokemonsLimit,redirect,likePokemon,favorites,deleteFavorite,searchText}) {
+function AppRouter({ pokemons, updatePage, pokemonsLimit,redirectInfo,likePokemon,favorites,deleteFavorite,searchText}) {
   return (
     <div>
       <Navigation />
@@ -19,7 +19,7 @@ function AppRouter({ pokemons, updatePage, pokemonsLimit,redirect,likePokemon,fa
               pokemons={pokemons}
               updatePage={updatePage}
               pokemonsLimit={pokemonsLimit}
-              redirect={redirect}
+              redirectInfo={redirectInfo}
               likePokemon={likePokemon}
               favorites={favorites}
               deleteFavorite={deleteFavorite}
@@ -27,7 +27,7 @@ function AppRouter({ pokemons, updatePage, pokemonsLimit,redirect,likePokemon,fa
             />
           }
         />
-        <Route path="/pokedex/:id" element={<PokemonInfo redirect={redirect}/>}/>
+        <Route path="/pokedex/:id" element={<PokemonInfo redirectInfo={redirectInfo}/>}/>
       </Routes>
     </div>
   );

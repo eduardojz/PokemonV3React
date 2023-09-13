@@ -3,7 +3,7 @@ import { selectType } from "../assets/imports/imports";
 
 function CardPokemon({
   pokemons,
-  redirect,
+  redirectInfo,
   likePokemon,
   favorites,
   deleteFavorite,
@@ -27,7 +27,7 @@ function CardPokemon({
               Like
             </button>
           )}
-          <div className="card-img" onClick={() => redirect(item.id)}>
+          <div className="card-img" onClick={() => redirectInfo(item.id)}>
             <img src={item.img} alt={item.name} />
           </div>
           <div className="pokemon-info">

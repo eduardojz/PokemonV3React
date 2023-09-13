@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import AppRouter from "./AppRouter";
 import Header from "./components/Header";
 import {
   AddPokemon,
@@ -7,7 +6,10 @@ import {
   getPokemonData,
   deletePokemon,
 } from "./functions/Apis";
+import AppRouter from "./AppRouter";
+import {Navigate, useNavigate} from "react-router-dom";
 const App = () => {
+  const navigate = useNavigate();
   const [pokemons, setPokemons] = useState([]);
   const [pokemonsCopy, setPokemonsCopy] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -42,8 +44,12 @@ const App = () => {
     setCurrentPage(e.target.value);
     setUpdate(!update);
   }
-  async function redirect(id) {
-    window.open(`/pokedex/${id}`);
+  function redirectInfo(id) {
+    navigate(`/pokedex/${id}`);
+    // const navigate=useNavigate()
+    // navigate(`/pokedex/${id}`)
+    //window.open(`/pokedex/${id}`);
+    //return <Navigate to={`/pokedex/${id}`} />;
   }
   async function likePokemon(pokemon) {
     const verify = await AddPokemon(pokemon.id);
@@ -63,7 +69,7 @@ const App = () => {
       console.log("ya existe");
     } else {
       setUpdate(!update);
-      console.log("agregado");
+      console.log("Elimninado");
     }
   }
   function searchText(e) {
@@ -88,7 +94,7 @@ const App = () => {
             pokemons={pokemons}
             updatePage={updatePage}
             pokemonsLimit={pokemonsLimit}
-            redirect={redirect}
+            redirectInfo={redirectInfo}
             likePokemon={likePokemon}
             favorites={favorites}
             deleteFavorite={deleteFavorite}
