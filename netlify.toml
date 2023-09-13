@@ -1,15 +1,3 @@
 [[redirects]]
-from ="/"
-to ="/home"
-
-[[redirects]]
-from ="/about"
-to ="/about"
-
-[[redirects]]
 from ="/pokedex"
-to ="/pokedex"
-
-[[redirects]]
-from ="/pokedex/:id"
 to ="/pokedex/:id"
