@@ -59,7 +59,6 @@ const App = () => {
   }
   async function deleteFavorite(id) {
     const verify = await deletePokemon(id);
-    console.log(verify);
     //verify
     if (verify === true) {
       console.log("ya existe");

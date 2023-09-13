@@ -9,13 +9,13 @@ function PokemonInfo({ redirectInfo }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [dataEvolutions, setDataEvolutions] = useState([]);
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const pokemonData = await getPokemon(id);
         const pokemonEvolutions = await fetchEvolutionChain(id); 
-        console.log(pokemonData);
         const promises = pokemonEvolutions.evolutions.map((i) => getPokemon(i));
         const evolutionsData = await Promise.all(promises);
         setDataEvolutions(evolutionsData);
@@ -28,7 +28,7 @@ function PokemonInfo({ redirectInfo }) {
     }
 
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <div className="info-container">
