@@ -16,6 +16,7 @@ const App = () => {
   const [favorites, setFavorites] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [update, setUpdate] = useState(false);
+  const [regex,setRegex]=useState(new RegExp("","i"))
   const pokemonsLimit = 20;
   useEffect(() => {
     const fetchData = async () => {
@@ -24,13 +25,19 @@ const App = () => {
         const favoritePokemons = await getPokemonMockApi();
         setFavorites(favoritePokemons);
         //
-        const pokemonData = await getPokemonData({
+        var pokemonData = await getPokemonData({
           currentPage: currentPage,
           pokemonsLimit: pokemonsLimit,
         });
         const pokemonData2 = await getPokemonData({ pokemonsLimit: 1000 });
-        setPokemons(pokemonData);
         setPokemonsCopy(pokemonData2);
+        console.log("filter text",regex);
+        if (!regex.test("?:") && regex!="") {
+          console.log("no esta vacio");
+           pokemonData = pokemonsCopy.filter(({ name }) => regex.test(name));
+           console.log("data",pokemonData);
+        }
+        setPokemons(pokemonData);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching Pokémon data:", error);
@@ -68,9 +75,10 @@ const App = () => {
     }
   }
   function searchText(e) {
-    let regex = new RegExp(e.target.value, "i"); //  'i'  insensible a mayusculas/minusculas
+    const regex = new RegExp(e.target.value, "i"); //  'i'  insensible a mayusculas/minusculas
     if (e.target.value !== "") {
       const filterData = pokemonsCopy.filter(({ name }) => regex.test(name));
+      setRegex(regex)
       setPokemons(filterData);
     } else {
       setUpdate(!update);

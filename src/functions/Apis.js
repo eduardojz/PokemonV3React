@@ -60,8 +60,6 @@ export async function deletePokemon (id){
   try {
     const pokemonMockApi = await getPokemonMockApi()
     const pokemon = pokemonMockApi.find((pokemon) => {
-      console.log("idFind=>",pokemon.idPokemon,"type=>",typeof(pokemon.idPokemon));
-      console.log("id=>",id,"type=>",typeof(id));
       return pokemon.idPokemon == id;
     });
     console.log(pokemon);
@@ -76,9 +74,9 @@ export async function deletePokemon (id){
         }
       ).then((response)=>{
         if (response.ok) {
-          console.log(`Pokémon ${idPokemon} eliminado correctamente.`);
+          console.log(`Pokemon ${idPokemon} eliminado correctamente.`);
         } else {
-          console.error(`Error al eliminar el Pokémon con idPokemon ${idPokemon}.`);
+          console.error(`Error al eliminar el Pokemon con idPokemon ${idPokemon}.`);
         }
       });
   

@@ -18,10 +18,10 @@
   flex-direction: column;
 }
 .cards-container {
-  padding: 15px;
+  padding: 25px;
   background-color: rgb(154, 154, 154);
-  width: 70%;
-  min-height: 600px;
+  width: auto;
+  min-height: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
